@@ -1,0 +1,79 @@
+:root {
+    --primary-teal: #008080; /* Empowerment/Movement */
+    --primary-orange: #FFA500; /* Recovery/Restoration */
+    --dark-bg: #121212;
+    --text-light: #F5F5F5;
+}
+
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    overflow-x: hidden;
+}
+
+/* Fixed Split Layout */
+.container {
+    display: flex;
+}
+
+/* Left Side: Sticky Visual (The "Dynamic" Element) */
+.visual-stage {
+    width: 50%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #1e1e1e 0%, #000 100%);
+}
+
+.visual-stage img {
+    max-width: 80%;
+    height: auto;
+    transition: all 0.5s ease-out;
+    opacity: 0; /* Hidden by default */
+    position: absolute; /* Stack images on top of each other */
+}
+
+.visual-stage img.active {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Right Side: Scrollable Narrative */
+.narrative-track {
+    width: 50%;
+}
+
+.step {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 4rem;
+    border-left: 1px solid rgba(255,255,255,0.1);
+    transition: opacity 0.3s ease;
+    opacity: 0.3;
+}
+
+.step.active {
+    opacity: 1;
+}
+
+.step h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.step p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #aaa;
+}
+
+/* Dynamic Colors based on active state */
+.step.teal-mode h2 { color: var(--primary-teal); }
+.step.orange-mode h2 { color: var(--primary-orange); }
