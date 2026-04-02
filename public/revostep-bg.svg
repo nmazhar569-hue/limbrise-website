@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+  <defs>
+    <!-- Dark navy-to-charcoal gradient background -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#0a0f1e"/>
+      <stop offset="40%"  stop-color="#0d1b2e"/>
+      <stop offset="75%"  stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1a1a2e"/>
+    </linearGradient>
+
+    <!-- Blue shimmer for anatomical lines -->
+    <linearGradient id="sh" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#60a5fa" stop-opacity="0.6"/>
+      <stop offset="50%"  stop-color="#818cf8" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.05"/>
+    </linearGradient>
+
+    <!-- Spotlight glow behind leg -->
+    <radialGradient id="sp" cx="52%" cy="34%" r="52%">
+      <stop offset="0%"   stop-color="#1e3a5f" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#0a0f1e" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Glow filter -->
+    <filter id="gl" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Soft glow -->
+    <filter id="sg" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- === BACKGROUND === -->
+  <rect width="900" height="520" fill="url(#bg)"/>
+  <rect width="900" height="520" fill="url(#sp)"/>
+
+  <!-- Subtle engineering grid -->
+  <g stroke="#1e3a5f" stroke-width="0.4" opacity="0.22">
+    <line x1="0" y1="104" x2="900" y2="104"/>
+    <line x1="0" y1="208" x2="900" y2="208"/>
+    <line x1="0" y1="312" x2="900" y2="312"/>
+    <line x1="0" y1="416" x2="900" y2="416"/>
+    <line x1="180" y1="0" x2="180" y2="520"/>
+    <line x1="360" y1="0" x2="360" y2="520"/>
+    <line x1="540" y1="0" x2="540" y2="520"/>
+    <line x1="720" y1="0" x2="720" y2="520"/>
+  </g>
+
+  <!-- Soft blue aura behind leg -->
+  <ellipse cx="530" cy="265" rx="90" ry="155" fill="#3b82f6" opacity="0.055"/>
+
+  <!-- === ANATOMICAL LEG — full outline (femur + knee + tibia/fibula) === -->
+  <g filter="url(#sg)" opacity="0.28">
+    <!-- Full leg silhouette path -->
+    <path d="
+      M530,18
+      C508,18 490,38 486,66
+      L470,228 C466,248 462,264 456,278
+      L444,315 C439,332 438,350 441,366
+      L448,428 C450,444 457,456 468,463
+      L486,472 C497,478 512,478 522,472
+      L540,463 C551,456 558,444 560,428
+      L567,366 C570,350 569,332 564,315
+      L552,278 C546,264 542,248 538,228
+      L522,66
+      C518,38 552,18 530,18 Z"
+      fill="none" stroke="url(#sh)" stroke-width="1.4"/>
+  </g>
+
+  <!-- === KNEE JOINT — concentric rings === -->
+  <g filter="url(#gl)" opacity="0.35">
+    <circle cx="530" cy="288" r="44" fill="none" stroke="#60a5fa" stroke-width="1.1"/>
+    <circle cx="530" cy="288" r="30" fill="none" stroke="#818cf8" stroke-width="0.8"/>
+    <circle cx="530" cy="288" r="15" fill="none" stroke="#93c5fd" stroke-width="0.5"/>
+  </g>
+
+  <!-- Knee joint highlight arc (top) -->
+  <g filter="url(#gl)" opacity="0.45">
+    <path d="M496,264 A38,38 0 0,1 564,264"
+      fill="none" stroke="#93c5fd" stroke-width="2"/>
+  </g>
+
+  <!-- === MUSCLE FIBER LINES on upper leg === -->
+  <g opacity="0.20" stroke="#818cf8" stroke-width="0.65">
+    <line x1="498" y1="72" x2="493" y2="200"/>
+    <line x1="510" y1="68" x2="506" y2="197"/>
+    <line x1="522" y1="65" x2="520" y2="195"/>
+    <line x1="534" y1="65" x2="533" y2="195"/>
+    <line x1="546" y1="68" x2="547" y2="197"/>
+    <line x1="558" y1="74" x2="561" y2="202"/>
+  </g>
+
+  <!-- === TIBIA + FIBULA (lower leg) === -->
+  <g filter="url(#sg)" opacity="0.22">
+    <!-- Tibia (medial / thicker) -->
+    <path d="M490,330 C483,345 478,362 476,382 L468,445 C466,462 468,476 476,487 L484,498 C490,506 501,510 512,509"
+      fill="none" stroke="url(#sh)" stroke-width="1.2"/>
+    <!-- Fibula (lateral / thinner) -->
+    <path d="M570,330 C577,345 582,362 584,382 L592,445 C594,462 592,476 584,487 L576,498 C570,506 559,510 548,509"
+      fill="none" stroke="url(#sh)" stroke-width="1.2"/>
+  </g>
+
+  <!-- Thin outer fibula accent -->
+  <g opacity="0.14">
+    <path d="M574,336 C578,358 580,383 581,408 L582,444 C583,462 580,476 574,486"
+      fill="none" stroke="#93c5fd" stroke-width="0.65"/>
+  </g>
+
+  <!-- === FORCE DISTRIBUTION LINES radiating from knee === -->
+  <g filter="url(#gl)" opacity="0.22" stroke="#38bdf8" stroke-width="0.9">
+    <line x1="530" y1="288" x2="415" y2="195"/>
+    <line x1="530" y1="288" x2="375" y2="308"/>
+    <line x1="530" y1="288" x2="408" y2="392"/>
+    <line x1="530" y1="288" x2="645" y2="195"/>
+    <line x1="530" y1="288" x2="685" y2="308"/>
+    <line x1="530" y1="288" x2="652" y2="392"/>
+  </g>
+
+  <!-- Force endpoint dots -->
+  <g fill="#38bdf8" opacity="0.38">
+    <circle cx="473" cy="242" r="2.5"/>
+    <circle cx="452" cy="298" r="2.5"/>
+    <circle cx="468" cy="340" r="2.5"/>
+    <circle cx="587" cy="242" r="2.5"/>
+    <circle cx="608" cy="298" r="2.5"/>
+    <circle cx="592" cy="340" r="2.5"/>
+  </g>
+
+  <!-- === CORNER ACCENT BRACKETS === -->
+  <g stroke="#1e40af" stroke-width="0.6" opacity="0.28">
+    <line x1="0"   y1="0"   x2="55"  y2="0"/>
+    <line x1="0"   y1="0"   x2="0"   y2="55"/>
+    <line x1="900" y1="0"   x2="845" y2="0"/>
+    <line x1="900" y1="0"   x2="900" y2="55"/>
+    <line x1="0"   y1="520" x2="55"  y2="520"/>
+    <line x1="0"   y1="520" x2="0"   y2="465"/>
+    <line x1="900" y1="520" x2="845" y2="520"/>
+    <line x1="900" y1="520" x2="900" y2="465"/>
+  </g>
+</svg>

@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+  <defs>
+
+    <!-- Deep dark background -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#060d0f"/>
+      <stop offset="45%"  stop-color="#071214"/>
+      <stop offset="100%" stop-color="#0a1a1c"/>
+    </linearGradient>
+
+    <!-- Teal shimmer for athlete streaks -->
+    <linearGradient id="streak" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#0d9488" stop-opacity="0"/>
+      <stop offset="40%"  stop-color="#2dd4bf" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#0d9488" stop-opacity="0.08"/>
+    </linearGradient>
+
+    <!-- Cyan arc gradient for rings -->
+    <linearGradient id="arc1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#22d3ee" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0d9488" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="arc2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#34d399" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0d9488" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="arc3" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#67e8f9" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <!-- Spotlight behind rings -->
+    <radialGradient id="sp" cx="68%" cy="42%" r="45%">
+      <stop offset="0%"   stop-color="#0d4a4a" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#060d0f" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Athlete body glow -->
+    <radialGradient id="athglow" cx="30%" cy="50%" r="40%">
+      <stop offset="0%"   stop-color="#0d9488" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#060d0f" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Glow filter -->
+    <filter id="gl" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Strong glow -->
+    <filter id="sg" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Motion blur for athlete -->
+    <filter id="mblur" x="-20%" y="-5%" width="140%" height="110%">
+      <feGaussianBlur stdDeviation="6 0.5"/>
+    </filter>
+
+    <!-- Soft blur -->
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2.5"/>
+    </filter>
+
+  </defs>
+
+  <!-- ===== BACKGROUND ===== -->
+  <rect width="900" height="520" fill="url(#bg)"/>
+  <rect width="900" height="520" fill="url(#sp)"/>
+  <rect width="900" height="520" fill="url(#athglow)"/>
+
+  <!-- ===== DATA GRID OVERLAY ===== -->
+  <!-- Fine teal grid lines -->
+  <g stroke="#0d9488" stroke-width="0.35" opacity="0.18">
+    <line x1="0"   y1="52"  x2="900" y2="52"/>
+    <line x1="0"   y1="104" x2="900" y2="104"/>
+    <line x1="0"   y1="156" x2="900" y2="156"/>
+    <line x1="0"   y1="208" x2="900" y2="208"/>
+    <line x1="0"   y1="260" x2="900" y2="260"/>
+    <line x1="0"   y1="312" x2="900" y2="312"/>
+    <line x1="0"   y1="364" x2="900" y2="364"/>
+    <line x1="0"   y1="416" x2="900" y2="416"/>
+    <line x1="0"   y1="468" x2="900" y2="468"/>
+    <line x1="60"  y1="0"   x2="60"  y2="520"/>
+    <line x1="120" y1="0"   x2="120" y2="520"/>
+    <line x1="180" y1="0"   x2="180" y2="520"/>
+    <line x1="240" y1="0"   x2="240" y2="520"/>
+    <line x1="300" y1="0"   x2="300" y2="520"/>
+    <line x1="360" y1="0"   x2="360" y2="520"/>
+    <line x1="420" y1="0"   x2="420" y2="520"/>
+    <line x1="480" y1="0"   x2="480" y2="520"/>
+    <line x1="540" y1="0"   x2="540" y2="520"/>
+    <line x1="600" y1="0"   x2="600" y2="520"/>
+    <line x1="660" y1="0"   x2="660" y2="520"/>
+    <line x1="720" y1="0"   x2="720" y2="520"/>
+    <line x1="780" y1="0"   x2="780" y2="520"/>
+    <line x1="840" y1="0"   x2="840" y2="520"/>
+  </g>
+
+  <!-- Grid node dots at intersections (sparse) -->
+  <g fill="#2dd4bf" opacity="0.20">
+    <circle cx="180" cy="104" r="1.5"/>
+    <circle cx="180" cy="208" r="1.5"/>
+    <circle cx="180" cy="312" r="1.5"/>
+    <circle cx="180" cy="416" r="1.5"/>
+    <circle cx="300" cy="156" r="1.5"/>
+    <circle cx="300" cy="260" r="1.5"/>
+    <circle cx="300" cy="364" r="1.5"/>
+    <circle cx="420" cy="104" r="1.5"/>
+    <circle cx="420" cy="208" r="1.5"/>
+    <circle cx="420" cy="312" r="1.5"/>
+    <circle cx="420" cy="416" r="1.5"/>
+    <circle cx="540" cy="156" r="1.5"/>
+    <circle cx="540" cy="260" r="1.5"/>
+    <circle cx="540" cy="364" r="1.5"/>
+    <circle cx="660" cy="104" r="1.5"/>
+    <circle cx="660" cy="208" r="1.5"/>
+    <circle cx="660" cy="312" r="1.5"/>
+    <circle cx="660" cy="416" r="1.5"/>
+    <circle cx="780" cy="52"  r="1.5"/>
+    <circle cx="780" cy="156" r="1.5"/>
+    <circle cx="780" cy="260" r="1.5"/>
+    <circle cx="780" cy="364" r="1.5"/>
+    <circle cx="780" cy="468" r="1.5"/>
+  </g>
+
+  <!-- ===== MOTION-BLURRED ATHLETE SILHOUETTE ===== -->
+  <!-- Blurred ghost layers (motion trail to the left) -->
+  <g opacity="0.06" fill="#0d9488" filter="url(#soft)">
+    <!-- Ghost 3 (furthest left) -->
+    <g transform="translate(-55, 0)">
+      <ellipse cx="268" cy="150" rx="22" ry="28"/>
+      <rect x="250" y="178" width="38" height="65" rx="8"/>
+      <line x1="258" y1="243" x2="238" y2="310" stroke="#0d9488" stroke-width="14" stroke-linecap="round"/>
+      <line x1="278" y1="243" x2="298" y2="308" stroke="#0d9488" stroke-width="14" stroke-linecap="round"/>
+      <line x1="258" y1="195" x2="228" y2="240" stroke="#0d9488" stroke-width="10" stroke-linecap="round"/>
+      <line x1="278" y1="195" x2="310" y2="232" stroke="#0d9488" stroke-width="10" stroke-linecap="round"/>
+    </g>
+    <!-- Ghost 2 -->
+    <g transform="translate(-28, 0)">
+      <ellipse cx="268" cy="150" rx="22" ry="28"/>
+      <rect x="250" y="178" width="38" height="65" rx="8"/>
+      <line x1="258" y1="243" x2="238" y2="310" stroke="#0d9488" stroke-width="14" stroke-linecap="round"/>
+      <line x1="278" y1="243" x2="298" y2="308" stroke="#0d9488" stroke-width="14" stroke-linecap="round"/>
+      <line x1="258" y1="195" x2="228" y2="240" stroke="#0d9488" stroke-width="10" stroke-linecap="round"/>
+      <line x1="278" y1="195" x2="310" y2="232" stroke="#0d9488" stroke-width="10" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Main athlete silhouette - running pose (mid stride, leaning forward) -->
+  <g opacity="0.30" fill="#2dd4bf" filter="url(#gl)">
+    <!-- Head -->
+    <ellipse cx="268" cy="148" rx="23" ry="27"/>
+    <!-- Torso (leaning forward) -->
+    <path d="M252,175 C248,182 246,198 248,215 L252,245 L284,245 L288,215 C290,198 288,182 284,175 Z"/>
+    <!-- Left arm (pumping back) -->
+    <path d="M252,192 C240,196 225,210 215,228 C212,234 214,240 220,240 C226,240 228,236 232,230 C240,218 250,208 256,204 Z"/>
+    <!-- Right arm (pumping forward) -->
+    <path d="M284,192 C296,188 314,180 326,175 C332,172 334,166 330,162 C326,158 322,160 318,164 C308,172 294,182 288,190 Z"/>
+    <!-- Left leg (back leg, extended) -->
+    <path d="M256,245 C250,262 244,285 240,308 C237,322 232,335 228,348 C224,360 225,370 232,372 C238,374 244,368 248,356 C254,342 260,328 264,312 C268,295 270,272 270,252 Z"/>
+    <!-- Left foot -->
+    <path d="M228,360 C220,368 212,374 208,374 C202,374 200,368 204,362 C208,356 218,352 228,350 Z"/>
+    <!-- Right leg (front, bent knee sprinting) -->
+    <path d="M272,245 C275,262 278,280 276,300 C274,318 266,332 258,344 L254,362 C252,370 256,376 262,376 C268,376 272,370 276,362 L288,338 C298,322 304,304 304,284 C304,264 298,250 290,246 Z"/>
+    <!-- Right foot -->
+    <path d="M254,368 C258,378 264,386 270,386 C278,386 282,380 278,372 C274,364 264,360 254,360 Z"/>
+  </g>
+
+  <!-- Athlete cyan edge-glow outline -->
+  <g opacity="0.18" fill="none" stroke="#22d3ee" stroke-width="1.5" filter="url(#sg)">
+    <ellipse cx="268" cy="148" rx="23" ry="27"/>
+    <path d="M252,175 C248,182 246,198 248,215 L252,245 L284,245 L288,215 C290,198 288,182 284,175 Z"/>
+    <path d="M252,192 C240,196 225,210 215,228 C212,234 214,240 220,240"/>
+    <path d="M284,192 C296,188 314,180 326,175 C332,172 334,166 330,162"/>
+    <path d="M256,245 C250,262 244,285 240,308 C237,322 232,335 228,348 L208,374"/>
+    <path d="M272,245 C278,270 280,296 276,316 L254,370"/>
+  </g>
+
+  <!-- Motion streak lines trailing the athlete -->
+  <g opacity="0.30" stroke="url(#streak)" stroke-width="1.2" filter="url(#soft)">
+    <line x1="50"  y1="148" x2="244" y2="148"/>
+    <line x1="50"  y1="158" x2="244" y2="158"/>
+    <line x1="50"  y1="190" x2="244" y2="192"/>
+    <line x1="50"  y1="220" x2="244" y2="218"/>
+    <line x1="50"  y1="245" x2="244" y2="240"/>
+    <line x1="50"  y1="270" x2="244" y2="265"/>
+  </g>
+</svg>
