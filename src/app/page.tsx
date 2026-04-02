@@ -8,10 +8,12 @@ import { CodeBlock } from "@/components/ui/code-block";
 import { LimbRiseLogo } from "@/components/ui/limbrise-logo";
 import { Box, Smartphone, ArrowRight, Eye, Target, Linkedin, Instagram, Mail } from "lucide-react";
 import Link from "next/link";
+import { ScrollIndicator } from "@/components/ui/scroll-indicator";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col bg-black text-white selection:bg-primary/30">
+      <ScrollIndicator />
 
       {/* 1. Fixed Navigation Pill */}
       <NavPill />
@@ -132,7 +134,7 @@ export default function Home() {
                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#14b8a6] font-medium">Our Purpose</span>
              </div>
              <h3 className="font-serif text-4xl md:text-5xl tracking-tight text-white mb-6">
-                Why we build LimbRise
+                Why we built LimbRise
              </h3>
              <p className="text-[#8a9bb3] text-lg max-w-2xl mx-auto leading-relaxed">
                We remove the hurdles to recovery. Driven by a commitment to restored independence, we work to make every step feel achievable for everyone.

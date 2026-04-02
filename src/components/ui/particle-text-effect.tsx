@@ -232,7 +232,9 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffect
         if (word === "_LOGO_") {
             const cx = canvas.width / 2;
             const cy = canvas.height / 2;
-            const scale = window.innerWidth < 1000 ? 1 : 1.5;
+            const isMobile = window.innerWidth < 768;
+            const isTablet = window.innerWidth < 1024;
+            const scale = isMobile ? 0.6 : (isTablet ? 1 : 1.5);
 
             offscreenCtx.lineCap = "round";
             offscreenCtx.lineJoin = "round";
@@ -266,8 +268,16 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffect
         } else {
             offscreenCtx.fillStyle = "white"
 
-            // Choose font size based on word length to fit "Move Better, Feel Better."
-            const fontSize = word.length > 15 ? 50 : 100;
+            const isMobile = window.innerWidth < 768;
+            const isTablet = window.innerWidth < 1024;
+            
+            let fontSize = word.length > 15 ? 50 : 100;
+            if (isMobile) {
+                fontSize = word.length > 15 ? 24 : 42;
+            } else if (isTablet) {
+                fontSize = word.length > 15 ? 36 : 70;
+            }
+
             offscreenCtx.font = `bold ${fontSize}px Inter, sans-serif`
             offscreenCtx.textAlign = "center"
             offscreenCtx.textBaseline = "middle"
