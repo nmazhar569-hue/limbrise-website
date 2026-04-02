@@ -212,11 +212,11 @@ export default function Home() {
              <h3 className="font-serif text-4xl md:text-5xl tracking-tight text-white mb-8 leading-tight">
                 Engineering a better way forward
              </h3>
-             <p className="text-[#8a9bb3] text-lg mb-6 leading-relaxed">
-               LimbRise was born from a shared vision between two 4th-year engineering students to bring intelligent, human-centered technology to rehabilitation. Together, they combine diverse backgrounds to engineer solutions that restore both confidence and mobility. 
+             <p className="text-[#8a9bb3] text-[17px] mb-5 leading-relaxed">
+               LimbRise began when Richard, born in Canada of Canadian-Filipino descent, tore his knee in university and experienced firsthand how slow, painful, and impersonal rehabilitation could be. Living through months of limited mobility, he realized how much patience recovery demands and how existing tools fail to truly support people on that journey. This inspired him to start LimbRise. As CEO, Richard channels that personal experience into a leadership style rooted in empathy and high standards—pushing the team to listen first, then build solutions that are both structurally robust and emotionally considerate.
              </p>
-             <p className="text-[#8a9bb3] text-lg mb-10 leading-relaxed">
-               Richard, born in Canada of Canadian-Filipino descent, brings a dedication to structural integrity and visionary design. Noor, who immigrated from Egypt to Canada at age 11, pairs this with deep technical expertise to build the intelligence powering our devices.
+             <p className="text-[#8a9bb3] text-[17px] mb-10 leading-relaxed">
+               This vision crystallized when Noor, who immigrated from Egypt to Canada at age 11, tore his meniscus and faced the same long, frustrating road back to feeling like himself again. He understood the struggles caused by the complex, interconnected nature of recovery. That shared lived experience fuels their commitment to building not just a device, but a complete ecosystem for recovery where data, coaching, and community work together. Bringing deep technical expertise, Noor leads the intelligence behind our platform—ensuring patients and clinicians are supported by technology that feels as thoughtful as the people who use it.
              </p>
              
              <Link href="/about" className="group flex w-fit items-center gap-3 rounded-full bg-white text-black px-8 py-3.5 font-semibold transition-all duration-300 hover:bg-[#14b8a6] hover:text-white hover:shadow-[0_0_20px_rgba(20,184,166,0.3)]">
