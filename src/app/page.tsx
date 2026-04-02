@@ -121,9 +121,9 @@ export default function Home() {
         {/* Subtle grid background */}
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(rgba(20,184,166,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(20,184,166,0.3) 1px, transparent 1px)', backgroundSize: '60px 60px' }}></div>
 
-        {/* Decorative star accent */}
-        <div className="absolute bottom-12 right-12 text-[#14b8a6] opacity-20">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="currentColor"><path d="M24 0L26.5 21.5L48 24L26.5 26.5L24 48L21.5 26.5L0 24L21.5 21.5Z"/></svg>
+        {/* Decorative logo accent */}
+        <div className="absolute -bottom-16 -right-16 pointer-events-none opacity-[0.03] rotate-12">
+          <LimbRiseLogo className="size-96" />
         </div>
 
         <div className="relative mx-auto flex w-full max-w-5xl flex-col gap-16">
