@@ -121,15 +121,10 @@ class Particle {
             b: Math.round(this.startColor.b + (this.targetColor.b - this.startColor.b) * this.colorWeight),
         }
 
-        if (drawAsPoints) {
-            ctx.fillStyle = `rgb(${currentColor.r}, ${currentColor.g}, ${currentColor.b})`
-            ctx.fillRect(this.pos.x, this.pos.y, 2, 2)
-        } else {
-            ctx.fillStyle = `rgb(${currentColor.r}, ${currentColor.g}, ${currentColor.b})`
-            ctx.beginPath()
-            ctx.arc(this.pos.x, this.pos.y, this.particleSize / 2, 0, Math.PI * 2)
-            ctx.fill()
-        }
+        ctx.fillStyle = `rgb(${currentColor.r}, ${currentColor.g}, ${currentColor.b})`
+        ctx.beginPath()
+        ctx.arc(this.pos.x, this.pos.y, this.particleSize / 2, 0, Math.PI * 2)
+        ctx.fill()
     }
 
     kill(width: number, height: number) {
@@ -195,8 +190,7 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffect
         scrollAmtRef.current = latest
     })
 
-    const pixelSteps = 6
-    const drawAsPoints = true
+    const drawAsPoints = false
 
     const generateRandomPos = (x: number, y: number, mag: number): Vector2D => {
         const randomX = Math.random() * 1000
@@ -299,10 +293,17 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffect
         const particles = particlesRef.current
         let particleIndex = 0
 
-        // Collect coordinates
+        const isMobile = window.innerWidth < 768;
+        const isTablet = window.innerWidth < 1024;
+        const currentPixelSteps = isMobile ? 2 : (isTablet ? 3 : 4);
+
+        // Collect coordinates using a 2D grid approach instead of 1D linear mapping
+        // This ensures the point cloud perfectly aligns vertically and horizontally -> NO DOTTY PATTERN
         const coordsIndexes: number[] = []
-        for (let i = 0; i < pixels.length; i += pixelSteps * 4) {
-            coordsIndexes.push(i)
+        for (let y = 0; y < canvas.height; y += currentPixelSteps) {
+            for (let x = 0; x < canvas.width; x += currentPixelSteps) {
+                coordsIndexes.push((y * canvas.width + x) * 4)
+            }
         }
 
         // Shuffle coordinates for fluid motion
@@ -335,7 +336,7 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffect
                     particle.maxSpeed = Math.random() * 6 + 4
                     particle.baseMaxSpeed = particle.maxSpeed
                     particle.maxForce = particle.maxSpeed * 0.05
-                    particle.particleSize = Math.random() * 6 + 6
+                    particle.particleSize = Math.random() * currentPixelSteps + (currentPixelSteps * 1.5)
                     particle.colorBlendRate = Math.random() * 0.0275 + 0.0025
 
                     particles.push(particle)
@@ -412,7 +413,7 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffect
         // Auto-advance words (pause if scrolled down to prevent jittering targets while scattered)
         if (scrollAmtRef.current < 50) {
             frameCountRef.current++
-            if (frameCountRef.current % 240 === 0) {
+            if (frameCountRef.current % 450 === 0) { // Slower transition
                 wordIndexRef.current = (wordIndexRef.current + 1) % words.length
                 nextWord(words[wordIndexRef.current], canvas)
             }

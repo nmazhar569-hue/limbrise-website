@@ -185,9 +185,9 @@ export default function Home() {
         <div className="mx-auto flex w-full max-w-6xl flex-col lg:flex-row items-center gap-20">
           
           {/* Photos */}
-          <div className="w-full lg:flex-1 relative h-[550px] flex justify-center lg:justify-start mt-10 lg:mt-0 order-2 lg:order-1">
+          <div className="w-full lg:flex-1 relative lg:h-[550px] flex flex-col sm:flex-row lg:block items-center justify-center lg:justify-start gap-8 sm:gap-6 mt-10 lg:mt-0 order-2 lg:order-1">
             {/* Richard (CEO) */}
-            <div className="absolute left-4 md:left-24 lg:left-0 top-0 w-56 md:w-72 h-[380px] md:h-[450px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl z-10 transition-transform duration-700 hover:-translate-y-4 hover:z-30 hover:shadow-[0_20px_40px_rgba(20,184,166,0.15)] group">
+            <div className="relative lg:absolute lg:left-0 lg:top-0 w-[85%] sm:w-72 lg:w-72 h-[380px] md:h-[450px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl z-10 transition-transform duration-700 hover:-translate-y-4 hover:z-30 hover:shadow-[0_20px_40px_rgba(20,184,166,0.15)] group">
               <img src="/team/richard.jpg" alt="Richard - CEO" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-20">
                 <p className="text-xl font-semibold text-white tracking-tight">Richard</p>
@@ -195,7 +195,7 @@ export default function Home() {
               </div>
             </div>
             {/* Noor (CTO) */}
-            <div className="absolute right-4 md:right-24 lg:left-[220px] bottom-0 w-56 md:w-72 h-[380px] md:h-[450px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl z-20 transition-transform duration-700 hover:-translate-y-4 hover:z-30 hover:shadow-[0_20px_40px_rgba(20,184,166,0.15)] group">
+            <div className="relative lg:absolute lg:left-[220px] lg:bottom-0 w-[85%] sm:w-72 lg:w-72 h-[380px] md:h-[450px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl z-20 transition-transform duration-700 hover:-translate-y-4 hover:z-30 hover:shadow-[0_20px_40px_rgba(20,184,166,0.15)] group mt-0 lg:mt-0">
               <img src="/team/noor.png" alt="Noor - CTO" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-20">
                 <p className="text-xl font-semibold text-white tracking-tight">Noor</p>
@@ -225,6 +225,54 @@ export default function Home() {
              </Link>
           </div>
 
+        </div>
+
+        {/* Rest of the team */}
+        <div className="mx-auto mt-32 w-full max-w-6xl">
+          <div className="mb-10 flex flex-col items-center md:items-start text-center md:text-left">
+            <h4 className="font-serif text-3xl tracking-tight text-white mb-2">
+              The minds behind LimbRise
+            </h4>
+            <p className="text-[#8a9bb3] text-[15px] max-w-2xl">
+              Our multidisciplinary team of engineers, designers, and business leaders working together to redefine mobility support.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {/* Elijah Dodd */}
+            <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-[#0a0f12] shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-[#14b8a6]/40 hover:shadow-[0_15px_30px_rgba(20,184,166,0.1)]">
+              <div className="aspect-[4/5] w-full overflow-hidden flex items-center justify-center bg-neutral-900">
+                <img src="/team/elijah.png" alt="Elijah Dodd - Head of Engineers" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              </div>
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-20">
+                <p className="text-xl font-semibold text-white tracking-tight">Elijah Dodd</p>
+                <p className="text-sm font-medium text-[#14b8a6] mt-1">Head of Engineers</p>
+              </div>
+            </div>
+
+            {/* Kushi Damri */}
+            <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-[#0a0f12] shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-[#14b8a6]/40 hover:shadow-[0_15px_30px_rgba(20,184,166,0.1)]">
+              <div className="aspect-[4/5] w-full overflow-hidden flex items-center justify-center bg-neutral-900">
+                <img src="/team/kushi.jpg" alt="Kushi Damri - Business Development Officer" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              </div>
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-20">
+                <p className="text-xl font-semibold text-white tracking-tight">Kushi Damri</p>
+                <p className="text-sm font-medium text-[#14b8a6] mt-1">VP of Finance</p>
+              </div>
+            </div>
+
+            {/* Brianna Lawton */}
+            <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-[#0a0f12] shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-[#14b8a6]/40 hover:shadow-[0_15px_30px_rgba(20,184,166,0.1)]">
+              <div className="aspect-[4/5] w-full overflow-hidden flex items-center justify-center bg-neutral-900">
+                <img src="/team/brianna.png" alt="Brianna Lawton - Mechanical Engineer" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              </div>
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-20">
+                <p className="text-xl font-semibold text-white tracking-tight">Brianna Lawton</p>
+                <p className="text-sm font-medium text-[#14b8a6] mt-1">Mechanical Engineer</p>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
