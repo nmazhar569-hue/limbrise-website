@@ -392,7 +392,7 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffect
         // Auto-advance words
         if (scrollAmtRef.current < 50) {
             frameCountRef.current++
-            if (frameCountRef.current % 450 === 0) {
+            if (frameCountRef.current % 900 === 0) {
                 wordIndexRef.current = (wordIndexRef.current + 1) % words.length
                 nextWord(words[wordIndexRef.current], canvas)
             }
