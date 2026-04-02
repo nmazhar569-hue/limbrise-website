@@ -17,9 +17,9 @@ class Particle {
     randomDir: Vector2D = { x: 0, y: 0 }
 
     closeEnoughTarget = 50
-    maxSpeed = 4.0
-    baseMaxSpeed = 4.0
-    maxForce = 0.2
+    maxSpeed = 2.0
+    baseMaxSpeed = 2.0
+    maxForce = 0.06
     particleSize = 2.5
     isKilled = false
 
@@ -315,10 +315,10 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffect
                     particle.pos.x = randomPos.x
                     particle.pos.y = randomPos.y
 
-                    // Fast convergence
-                    particle.maxSpeed = Math.random() * 4 + 6
+                    // Slower, cinematic convergence
+                    particle.maxSpeed = Math.random() * 2 + 2
                     particle.baseMaxSpeed = particle.maxSpeed
-                    particle.maxForce = particle.maxSpeed * 0.08
+                    particle.maxForce = particle.maxSpeed * 0.03
                     // Particle size = pixel step so they tile perfectly when settled
                     particle.particleSize = currentPixelSteps + 1
                     particle.colorBlendRate = Math.random() * 0.04 + 0.005
@@ -392,7 +392,7 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS }: ParticleTextEffect
         // Auto-advance words
         if (scrollAmtRef.current < 50) {
             frameCountRef.current++
-            if (frameCountRef.current % 900 === 0) {
+            if (frameCountRef.current % 480 === 0) {
                 wordIndexRef.current = (wordIndexRef.current + 1) % words.length
                 nextWord(words[wordIndexRef.current], canvas)
             }
