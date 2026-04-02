@@ -137,7 +137,7 @@ export default function Home() {
                 Why we built LimbRise
              </h3>
              <p className="text-[#8a9bb3] text-lg max-w-2xl mx-auto leading-relaxed">
-               We remove the hurdles to recovery. Driven by a commitment to restored independence, we work to make every step feel achievable for everyone.
+               We remove the hurdles to recovery. Driven by a commitment to restore independence, we work to make every step feel achievable for everyone.
              </p>
           </div>
 
