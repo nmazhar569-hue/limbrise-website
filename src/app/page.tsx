@@ -195,7 +195,7 @@ export default function Home() {
               </div>
             </div>
             {/* Noor (CTO) */}
-            <div className="relative lg:absolute lg:left-[220px] lg:bottom-0 w-[85%] sm:w-72 lg:w-72 h-[380px] md:h-[450px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl z-20 transition-transform duration-700 hover:-translate-y-4 hover:z-30 hover:shadow-[0_20px_40px_rgba(20,184,166,0.15)] group mt-0 lg:mt-0">
+            <div className="relative lg:absolute lg:left-[300px] lg:bottom-0 w-[85%] sm:w-72 lg:w-72 h-[380px] md:h-[450px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl z-20 transition-transform duration-700 hover:-translate-y-4 hover:z-30 hover:shadow-[0_20px_40px_rgba(20,184,166,0.15)] group mt-0 lg:mt-0">
               <img src="/team/noor.png" alt="Noor - CTO" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-20">
                 <p className="text-xl font-semibold text-white tracking-tight">Noor</p>
