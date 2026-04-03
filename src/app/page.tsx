@@ -182,21 +182,39 @@ export default function Home() {
 
       {/* Meet the Team Section */}
       <section className="relative z-10 flex w-full flex-col items-center bg-[#0a0a0a] px-6 py-32 border-t border-white/5">
-        <div className="mx-auto flex w-full max-w-6xl flex-col lg:flex-row items-center gap-20">
-          
-          {/* Photos */}
-          <div className="w-full lg:flex-1 relative lg:h-[550px] flex flex-col sm:flex-row lg:block items-center justify-center lg:justify-start gap-8 sm:gap-6 mt-10 lg:mt-0 order-2 lg:order-1">
+        <div className="mx-auto w-full max-w-6xl">
+
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/5 bg-white/[0.02] px-4 py-1.5">
+              <span className="font-mono text-[10px] uppercase tracking-wider text-[#14b8a6]">Meet the Team</span>
+            </div>
+            <h3 className="font-serif text-4xl md:text-5xl tracking-tight text-white mb-4 leading-tight">
+              Engineering a better way forward
+            </h3>
+            <p className="text-[#8a9bb3] text-lg max-w-2xl mx-auto leading-relaxed">
+              Our multidisciplinary team of engineers, designers, and business leaders working together to redefine mobility support.
+            </p>
+          </div>
+
+          {/* Co-founders — Featured Row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6 max-w-3xl mx-auto">
             {/* Richard (CEO) */}
-            <div className="relative lg:absolute lg:left-0 lg:top-0 w-[85%] sm:w-72 lg:w-72 h-[380px] md:h-[450px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl z-10 transition-transform duration-700 hover:-translate-y-4 hover:z-30 hover:shadow-[0_20px_40px_rgba(20,184,166,0.15)] group">
-              <img src="/team/richard.jpg" alt="Richard - CEO" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-[#0a0f12] shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-[#14b8a6]/40 hover:shadow-[0_15px_30px_rgba(20,184,166,0.1)]">
+              <div className="aspect-[3/4] w-full overflow-hidden bg-neutral-900">
+                <img src="/team/richard.jpg" alt="Richard - Co-founder & CEO" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              </div>
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-20">
                 <p className="text-xl font-semibold text-white tracking-tight">Richard</p>
                 <p className="text-sm font-medium text-[#14b8a6] mt-1">Co-founder & CEO</p>
               </div>
             </div>
+
             {/* Noor (CTO) */}
-            <div className="relative lg:absolute lg:left-[300px] lg:bottom-0 w-[85%] sm:w-72 lg:w-72 h-[380px] md:h-[450px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl z-20 transition-transform duration-700 hover:-translate-y-4 hover:z-30 hover:shadow-[0_20px_40px_rgba(20,184,166,0.15)] group mt-0 lg:mt-0">
-              <img src="/team/noor.png" alt="Noor - CTO" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-[#0a0f12] shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-[#14b8a6]/40 hover:shadow-[0_15px_30px_rgba(20,184,166,0.1)]">
+              <div className="aspect-[3/4] w-full overflow-hidden bg-neutral-900">
+                <img src="/team/noor.png" alt="Noor - Co-founder & CTO" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              </div>
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-20">
                 <p className="text-xl font-semibold text-white tracking-tight">Noor</p>
                 <p className="text-sm font-medium text-[#14b8a6] mt-1">Co-founder & CTO</p>
@@ -204,44 +222,11 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Story Content */}
-          <div className="w-full lg:flex-1 flex flex-col items-center lg:items-start text-center lg:text-left order-1 lg:order-2">
-             <div className="mb-6 flex items-center gap-2 rounded-full border border-white/5 bg-white/[0.02] px-3 py-1">
-               <span className="font-mono text-[10px] uppercase tracking-wider text-[#14b8a6]">Meet the Team</span>
-             </div>
-             <h3 className="font-serif text-4xl md:text-5xl tracking-tight text-white mb-8 leading-tight">
-                Engineering a better way forward
-             </h3>
-             <p className="text-[#8a9bb3] text-[17px] mb-5 leading-relaxed">
-               LimbRise began when Richard, born in Canada of Canadian-Filipino descent, tore his knee in university and experienced firsthand how slow, painful, and impersonal rehabilitation could be. Living through months of limited mobility, he realized how much patience recovery demands and how existing tools fail to truly support people on that journey. This inspired him to start LimbRise. As CEO, Richard channels that personal experience into a leadership style rooted in empathy and high standards—pushing the team to listen first, then build solutions that are both structurally robust and emotionally considerate.
-             </p>
-             <p className="text-[#8a9bb3] text-[17px] mb-10 leading-relaxed">
-               This vision crystallized when Noor, who immigrated from Egypt to Canada at age 11, tore his meniscus and faced the same long, frustrating road back to feeling like himself again. He understood the struggles caused by the complex, interconnected nature of recovery. That shared lived experience fuels their commitment to building not just a device, but a complete ecosystem for recovery where data, coaching, and community work together. Bringing deep technical expertise, Noor leads the intelligence behind our platform—ensuring patients and clinicians are supported by technology that feels as thoughtful as the people who use it.
-             </p>
-             
-             <Link href="/about" className="group flex w-fit items-center gap-3 rounded-full bg-white text-black px-8 py-3.5 font-semibold transition-all duration-300 hover:bg-[#14b8a6] hover:text-white hover:shadow-[0_0_20px_rgba(20,184,166,0.3)]">
-                Our Story & Roadmap
-                <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
-             </Link>
-          </div>
-
-        </div>
-
-        {/* Rest of the team */}
-        <div className="mx-auto mt-32 w-full max-w-6xl">
-          <div className="mb-10 flex flex-col items-center md:items-start text-center md:text-left">
-            <h4 className="font-serif text-3xl tracking-tight text-white mb-2">
-              The minds behind LimbRise
-            </h4>
-            <p className="text-[#8a9bb3] text-[15px] max-w-2xl">
-              Our multidisciplinary team of engineers, designers, and business leaders working together to redefine mobility support.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {/* Rest of the Team — 3-Column Row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {/* Elijah Dodd */}
             <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-[#0a0f12] shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-[#14b8a6]/40 hover:shadow-[0_15px_30px_rgba(20,184,166,0.1)]">
-              <div className="aspect-[4/5] w-full overflow-hidden flex items-center justify-center bg-neutral-900">
+              <div className="aspect-[4/5] w-full overflow-hidden bg-neutral-900">
                 <img src="/team/elijah.png" alt="Elijah Dodd - Head of Engineers" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-20">
@@ -252,8 +237,8 @@ export default function Home() {
 
             {/* Kushi Damri */}
             <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-[#0a0f12] shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-[#14b8a6]/40 hover:shadow-[0_15px_30px_rgba(20,184,166,0.1)]">
-              <div className="aspect-[4/5] w-full overflow-hidden flex items-center justify-center bg-neutral-900">
-                <img src="/team/kushi.jpg" alt="Kushi Damri - Business Development Officer" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="aspect-[4/5] w-full overflow-hidden bg-neutral-900">
+                <img src="/team/kushi.jpg" alt="Kushi Damri - VP of Finance" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-20">
                 <p className="text-xl font-semibold text-white tracking-tight">Kushi Damri</p>
@@ -263,7 +248,7 @@ export default function Home() {
 
             {/* Brianna Lawton */}
             <div className="group relative rounded-2xl overflow-hidden border border-white/10 bg-[#0a0f12] shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-[#14b8a6]/40 hover:shadow-[0_15px_30px_rgba(20,184,166,0.1)]">
-              <div className="aspect-[4/5] w-full overflow-hidden flex items-center justify-center bg-neutral-900">
+              <div className="aspect-[4/5] w-full overflow-hidden bg-neutral-900">
                 <img src="/team/brianna.png" alt="Brianna Lawton - Mechanical Engineer" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-20">
@@ -271,10 +256,34 @@ export default function Home() {
                 <p className="text-sm font-medium text-[#14b8a6] mt-1">Mechanical Engineer</p>
               </div>
             </div>
-
           </div>
+
+          {/* Origin Story — Below all photos */}
+          <div className="mt-24 max-w-4xl mx-auto">
+            <div className="relative rounded-2xl border border-white/5 bg-[#0c1017]/60 p-8 md:p-12 backdrop-blur-sm">
+              {/* Corner accent */}
+              <div className="absolute -top-px -left-px h-16 w-16 rounded-tl-2xl border-t-2 border-l-2 border-[#14b8a6]/40"></div>
+              
+              <h4 className="font-serif text-2xl md:text-3xl tracking-tight text-white mb-8">How LimbRise began</h4>
+              <p className="text-[#8a9bb3] text-[16px] md:text-[17px] mb-6 leading-relaxed">
+                LimbRise began when Richard, born in Canada of Canadian-Filipino descent, tore his knee in university and experienced firsthand how slow, painful, and impersonal rehabilitation could be. Living through months of limited mobility, he realized how much patience recovery demands and how existing tools fail to truly support people on that journey. This inspired him to start LimbRise. As CEO, Richard channels that personal experience into a leadership style rooted in empathy and high standards—pushing the team to listen first, then build solutions that are both structurally robust and emotionally considerate.
+              </p>
+              <p className="text-[#8a9bb3] text-[16px] md:text-[17px] mb-10 leading-relaxed">
+                This vision crystallized when Noor, who immigrated from Egypt to Canada at age 11, tore his meniscus and faced the same long, frustrating road back to feeling like himself again. He understood the struggles caused by the complex, interconnected nature of recovery. That shared lived experience fuels their commitment to building not just a device, but a complete ecosystem for recovery where data, coaching, and community work together. Bringing deep technical expertise, Noor leads the intelligence behind our platform—ensuring patients and clinicians are supported by technology that feels as thoughtful as the people who use it.
+              </p>
+              
+              <Link href="/about" className="group inline-flex items-center gap-3 rounded-full bg-white text-black px-8 py-3.5 font-semibold transition-all duration-300 hover:bg-[#14b8a6] hover:text-white hover:shadow-[0_0_20px_rgba(20,184,166,0.3)]">
+                Our Story & Roadmap
+                <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </div>
+
         </div>
       </section>
+
+
+
 
       {/* Contact Section */}
       <section className="relative w-full bg-[#050505] px-6 py-24 border-t border-white/5 overflow-hidden">
